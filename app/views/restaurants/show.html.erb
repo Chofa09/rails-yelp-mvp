@@ -1,0 +1,16 @@
+<div class="m-3">
+  <h3><%= @restaurant.name%></h3>
+  <p><em><%= @restaurant.category.capitalize %></em></p>
+  <p><%= @restaurant.address %></p>
+  <p>----------------</p>
+  <p><strong>Reviews:</strong></p>
+
+  <ul>
+    <% @reviews.each do |review| %>
+      <li><%= review.content %> - <em><%= review.rating %> star(s)</em></li>
+    <% end %>
+  </ul>
+
+    <%= link_to "Add a review", new_restaurant_review_path(@restaurant) %>
+    <%= link_to "Back to Restaurants", restaurants_path %>
+</div>

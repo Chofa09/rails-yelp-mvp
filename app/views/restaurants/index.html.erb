@@ -1,0 +1,14 @@
+<h1>Restaurants</h1>
+
+<div class="mx-3">
+  <ul>
+    <% @restaurants.each do |restaurant| %>
+      <li><h3><%= link_to restaurant.name, restaurant_path(restaurant), class: "text-decoration-none" %></h3></li>
+      <p><em><%= restaurant.category.capitalize %></em></p>
+      <p><%= restaurant.address %></p>
+      <p>----------------</p>
+    <% end %>
+  </ul>
+
+  <%= link_to "Add new restaurant", new_restaurant_path %>
+</div>
